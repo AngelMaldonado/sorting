@@ -2,6 +2,7 @@ package uaslp.enginering.labs;
 
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.Arrays;
 
 public class Main {
 
@@ -51,9 +52,31 @@ public class Main {
 
         };
 
+        System.out.println("");
         // Ordenar los alumnos por lastName y firstName e imprimir
-
+        sort(alumnos, new FirstNameDescendantComparator());
+        System.out.println("ALUMNOS POR FIRSTNAME:");
+        for (Alumno alumno : alumnos) {
+            System.out.println(alumno.getFirstName() + alumno.getFirstName());
+        }
+        System.out.println("ALUMNOS POR LASTNAME:");
+        sort(alumnos, new LastNameDescendantComparator());
+        for (Alumno alumno : alumnos) {
+            System.out.println(alumno.getLastName() + alumno.getFirstName());
+        }
         // Ordenar por mes de nacimiento y por clave e imprimir
+
+
+        System.out.println("");
+        System.out.println("ALUMNOS POR CLAVE:");
+        sort(alumnos, new BirthdayComparator());
+        for (Alumno alumno : alumnos) {
+            System.out.println(alumno.getFirstName() + alumno.getClave());
+        }
+        System.out.println("ALUMNOS POR NACIMIENTO:");
+        for (Alumno alumno : alumnos) {
+            System.out.println(alumno.getFirstName() + alumno.getBirthday());
+        }
     }
 
     private static void sort(Object[] datos, Comparator comparator) {
